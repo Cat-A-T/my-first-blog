@@ -7,17 +7,13 @@
             <h1><a href="/">Kate's blog</a></h1>
         </div>
 
-        <div>
-            <p>published: 09.11.2020, 21:43</p>
-            <h2><a href="">My first post</a></h2>
-            <p>It's very interesting to create site like this. I hope you enjoy this page!</p>
-        </div>
-
-        <div>
-            <p>published: 09.11.2020, 21:43</p>
-            <h2><a href="">My second post</a></h2>
-            <p>We have to improve our skills in web-development in order to do the best site on the Internet!</p>
-        </div>
+        {% for post in posts %}
+            <div>
+                <p>published: {{ post.published_date }}</p>
+                <h1><a href="">{{ post.title }}</a></h1>
+                <p>{{ post.text|linebreaksbr }}</p>
+            </div>
+        {% endfor %}
     </body>
 </html>
 
